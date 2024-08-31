@@ -170,11 +170,92 @@ body{
 /*Header*/
 .header{
     display: grid;
-    grid-area: 1/2/2/3;
-    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.616); 
+    grid-template-rows: 1fr 1.3fr;
+    box-shadow: 5px 2px 5px 0px rgba(0, 0, 0, 0.4); 
     background-color: var(--main-white);
+    align-items: center;
 }
 
+.searchbar{
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure it takes up the full width of the header */
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+
+/*Searchbar Spection*/
+    .submit-search {
+        background-color: var(--main-white);
+        border: none;
+        cursor: pointer;
+        padding: 5px; /* Reduce padding to make the button smaller */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .submit-search img {
+        max-width: clamp(1.3rem, 1.7rem, 2.3rem); /* Reduce icon size */
+        max-height: auto;
+    }
+
+    .input-searchbar {
+        display: flex; /* Ensure the container uses flexbox */
+        flex-grow: 1; /* Allows the container to take up remaining space */
+    }
+
+   .input-searchbar input {
+    background-color: #d4d4d8;
+    border: none;
+    border-radius: 15px;
+    height: var(--spacing-xl);
+    width: 100%; /* Makes the input field take up the full width of its container */
+    flex-grow: 1; /* Allows the input field to expand and take up the remaining space */
+    max-width: 100%; /* Prevents the input field from exceeding its container's width */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    }
+
+
+    .main-form{
+        margin-left: var(--spacing-xl);
+        display: flex;
+        flex-grow: 2;
+        gap:var(--spacing-m);
+    }
+
+/*Right Side of search bar*/
+
+.user-information {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 0.5;
+    padding-right: var(--spacing-xl); /* Optional: Add padding */
+}
+
+.bell-notification img{
+    max-width: clamp(1.3rem, 2rem, 2.3rem);
+    max-height:auto;
+}
+
+.profile-pic{
+    width: clamp(2rem, 25vw, 3rem); /* Responsive width */
+    height: clamp(2rem, 25vw, 3rem); /* Responsive height */
+    border-radius: 50%; /* Ensures the image is circular */
+    object-fit: cover; /* Ensures the image covers the container properly */
+    border: 1px solid #000000;
+}
+
+
+.user-information .username {
+    max-width: 150px; /* Adjust based on your layout needs */
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Hides text that overflows the container */
+    text-overflow: ellipsis; /* Adds ellipsis when text overflows */
+    margin-left: var(--spacing-s); /* Adjust margin as needed */
+    font-weight: bold;
+}
    
 
 
