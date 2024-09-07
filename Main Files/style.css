@@ -2,15 +2,15 @@
     --main-blue: #60a5fa;
     --main-white: #f9fafb;
     --main-yellow: #fbbf24;
-    --background-grey: #cbd5e1;
+    --background-grey: #e5e7eb;
 
 
     --spacing-s: 0.2rem;
     --spacing-m: 0.7rem;
     --spacing-l: 1.2rem;
     --spacing-xl: 1.5rem;
-    --font-s: 0.85rem;
-    --font-default: clamp(0.8rem, 0.75vw, 1rem);
+    --font-s: clamp(0.3rem, 0.5vw, 0.8em);
+    --font-default: clamp(0.7rem, 0.75vw, 1rem);
     --font-m: clamp(0.7rem, 1.2vw, 1.3rem);
     --heading: clamp(1rem, 1.9vw, 2.2rem);
     --transition: all 0.3s ease-in-out;
@@ -316,13 +316,65 @@ body{
     display:grid;
     grid-template-columns: 2.2fr 1fr;
     height: 80vh;
+    background-color:var(--background-grey);
 }
 
 .right-column{
     display: grid;
-    grid-template-rows: 0.5fr 2fr 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.4fr 2fr 0.5fr 2fr 0.5fr;
 }
 
+
+.announcements{
+    justify-self: start;
+    align-self: end;
+    padding-bottom: var(--spacing-m);
+    font-weight: 650;
+    margin-left: var(--spacing-l);
+}
+
+.announcements-messages {
+    background-color: var(--main-white);
+    margin-right: var(--spacing-xl);
+    margin-left: var(--spacing-l);
+    border-radius: 5px;
+    padding: var(--spacing-m);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.announcements-messages div {
+    display:flex;
+    overflow: hidden; /* Hide the overflowing content */
+    text-overflow: ellipsis;
+    white-space: normal; /* Allow the text to wrap */
+    line-height: 1.5rem; /* Adjust line height */
+}
+
+.announcement-content {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-default); /* Font scaling */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+    width: 20rem; 
+}
+
+.announcement-content div:first-child {
+    font-weight: bold;
+}
+
+.announcement-content div:last-child {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--font-default);
+    line-height: 1.5; /* Text readability */
+}
 
 
 
