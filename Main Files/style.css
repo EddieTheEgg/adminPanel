@@ -3,14 +3,14 @@
     --main-white: #f9fafb;
     --main-yellow: #fbbf24;
     --background-grey: #e5e7eb;
-
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
     --spacing-s: 0.2rem;
-    --spacing-m: 0.7rem;
+    --spacing-m: 0.77rem;
     --spacing-l: 1.2rem;
     --spacing-xl: 1.5rem;
     --font-s: clamp(0.3rem, 0.5vw, 0.8em);
-    --font-default: clamp(0.7rem, 0.75vw, 1rem);
+    --font-default: clamp(0.7rem, 1vw, 1.2rem);
     --font-m: clamp(0.7rem, 1.2vw, 1.3rem);
     --heading: clamp(1rem, 1.9vw, 2.2rem);
     --transition: all 0.3s ease-in-out;
@@ -27,9 +27,13 @@
     font-style:normal;
 }
 
+* {
+    box-sizing: border-box;
+}
 body{
     font-family: "montserrat";
     margin: 0px;
+
 }
 
 .grid-layout{
@@ -172,7 +176,8 @@ body{
 .header{
     display: grid;
     grid-template-rows: 1fr 1.3fr;
-    box-shadow: 5px 2px 5px 0px rgba(0, 0, 0, 0.4); 
+    box-shadow: var(--shadow); 
+    z-index:1000;
     background-color: var(--main-white);
     align-items: center;
 }
@@ -314,21 +319,20 @@ body{
 
 .main-content{
     display:grid;
-    grid-template-columns: 2.2fr 1fr;
-    height: 80vh;
+    grid-template-columns: 4fr 1fr;
     background-color:var(--background-grey);
 }
 
 .right-column{
     display: grid;
-    grid-template-rows: 0.4fr 2fr 0.5fr 2fr 0.5fr;
+    grid-template-rows: 0.34fr 2fr 0.3fr 2fr 0.5fr;
 }
 
 
 .announcements{
     justify-self: start;
     align-self: end;
-    padding-bottom: var(--spacing-m);
+    margin-bottom: var(--spacing-l);
     font-weight: 650;
     margin-left: var(--spacing-l);
 }
@@ -341,7 +345,7 @@ body{
     padding: var(--spacing-m);
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-around
 }
 
 .announcements-messages div {
@@ -375,6 +379,131 @@ body{
     font-size: var(--font-default);
     line-height: 1.5; /* Text readability */
 }
+
+.trending{
+    justify-self: start;
+    align-self: end;
+    padding-bottom: var(--spacing-m);
+    margin-left: var(--spacing-l);
+    font-weight: 650;
+    overflow: hidden;
+}
+
+.trending-accounts {
+    background-color: var(--main-white);
+    margin-right: var(--spacing-xl);
+    margin-left: var(--spacing-l);
+    border-radius: 5px;
+    padding: var(--spacing-m);
+    padding-top: var(--spacing-xl);
+    display: flex; 
+}
+
+.trending-accounts ul {
+    padding: 0;
+    margin: 0;
+}
+
+.trending-accounts li {
+    list-style: none;
+    font-size: var(--font-default);
+    display: flex;
+    flex: 1;
+    gap: var(--spacing-m);
+    padding-bottom: var(--spacing-m);
+    align-items: center; /* Vertically center items */
+    overflow: hidden; /* Prevents overflow of content */
+}
+
+.trending-accounts li img {
+    max-height: 48px;
+    max-width: 48px;
+    background-color: var(--main-yellow);
+    border-radius: 50%;
+    object-fit: cover; /* Ensures image covers the container without distortion */
+}
+
+
+.trending-accounts li p span{
+    font-weight: 600;
+}
+
+.trending-accounts li p{
+    display:flex;
+    flex-direction: column;
+}
+
+.trending-accounts li img{
+    max-height: 48px;
+    max-width: 48px;
+    background-color: var(--main-yellow);
+    border-radius: 50%;
+}
+
+
+/*Card Section*/
+.projects-title {
+    justify-self: start;
+    font-weight: 650;
+    margin-left: var(--spacing-l);
+    padding-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-m);
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+    flex-grow: 1;
+    margin-left: var(--spacing-l);
+}
+
+
+.projects {
+    grid-row: 1 / span 2;
+}
+
+.card {
+    background-color: #fff;
+    display: grid;
+    align-content: space-around;
+    border-radius: 8px;
+    padding: var(--spacing-m);
+    border: 0;
+    box-shadow: var(--shadow);
+}
+
+.project-description div{
+    font-weight: 650;
+}
+
+.project-description p{
+    font-size: var(--font-default);
+    line-height: 1.5;
+}
+.projects .card {
+    border-left: 8px solid var(--main-yellow);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--spacing-s);
+    gap: 1.5rem;
+}
+
+.mini-icon{
+    max-width: clamp(1.3rem, 1.7rem, 1.9rem)
+}
+
+
+
+
 
 
 
