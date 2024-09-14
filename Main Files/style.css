@@ -332,7 +332,7 @@ body{
 .announcements{
     justify-self: start;
     align-self: end;
-    margin-bottom: var(--spacing-l);
+    margin-bottom: var(--spacing-m);
     font-weight: 650;
     margin-left: var(--spacing-l);
 }
